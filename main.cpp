@@ -85,7 +85,6 @@ int main()
                             
                             while (repeat_hospital != 0) 
                             {
-                                cout << "\nWhat would you like to do?" << endl;
                                 cout << "Press V to check vaccine information" << endl;
                                 cin >> choice2;
                                 
@@ -105,8 +104,6 @@ int main()
                         {
                             cout << "\n\nAccess granted." << endl;
                             cout << "Welcome, " << input_uname << endl;
-                            cout << "\nWhat would you like to do?" << endl;
-                            
                             registration1.regisMenu(input_uname);
                         }
                     }
