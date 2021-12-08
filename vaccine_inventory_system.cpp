@@ -11,10 +11,11 @@ class vaccineInventory{
         // Linked list for Vaccine Data
         struct Node
         {
-            int code;
-            string name;
-            int quantity;
-            int gap;
+            // Members
+            int code; // for the Vaccine ID
+            string name; // for the Vaccine tag name
+            int quantity; // for the Vaccine Units
+            int gap; // for the Vaccine interval between two doses
             struct Node *next;
         };
 
@@ -41,14 +42,14 @@ void vaccineInventory::add_new_vaccine()
 	string inputName;
 
 	// User prompt
-	cout<<" Enter vaccine code\t\t: ";
+	cout<<" Enter vaccine code\t\t\t: ";
     cin>>vacID;
     cin.ignore(1,'\n');
-    cout<<" Enter name of the vaccine\t: ";
+    cout<<" Enter name of the vaccine\t\t: ";
     getline(cin,inputName);
-    cout<<" Enter Initial Quantity\t\t: ";
+    cout<<" Enter Initial Quantity\t\t\t: ";
     cin>>vacCount;
-    cout<<" Enter the Gap between 2 Doses\t: ";
+    cout<<" Enter the Gap between 2 Doses (days)\t: ";
     cin>>vacInterval;
 
     // Pointer to store input data and access to the member of Node
@@ -340,10 +341,10 @@ void vaccineInventory::menu(){
 	while(1)
 	{
 	    system("cls");
-	    cout<<"=================================================";
-	    cout<<"\n            Vaccine Inventory System             ";
-		cout<<"\n=================================================\n";
-		cout<<"\n                    Main Menu                    ";
+	    cout<<"=========================================================";
+	    cout<<"\n                Vaccine Inventory System             ";
+		cout<<"\n=========================================================\n";
+		cout<<"\n                        Main Menu                    ";
 		cout<<"\n 1. Add New Vaccine";
 		cout<<"\n 2. Update Vaccine Quantity";
 		cout<<"\n 3. Search Vaccine";
@@ -355,7 +356,7 @@ void vaccineInventory::menu(){
         // User prompt
 		cout<<"\n\n Enter your choice (1-7): ";
 		cin>>option;
-		cout<<"\n=================================================";
+		cout<<"\n=========================================================";
 		cout<<"\n";
 
 		// The program will do based on user choice
