@@ -391,13 +391,3 @@ void vaccineInventory::menu(){
 		}
 	}
 }
-
-/* Main function */
-int main()
-{
-    // Create a new object inventory1
-    vaccineInventory inventory1;
-
-    // Start the program
-    inventory1.menu();
-}
