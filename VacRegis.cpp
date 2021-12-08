@@ -1,5 +1,7 @@
-#include <bits/stdc++.h>
-#include<conio.h>
+#include <iostream>
+#include <stdlib.h>
+#include <iomanip>
+#include <conio.h>
 using namespace std;
 
 class loc{
@@ -63,7 +65,7 @@ class registration{
 		vector<patient> patients;
 		void regisMenu(string username){
 			string name;
-			cin >> username;
+			name = username;
 			
 			int p;
 			bool newr = true;
