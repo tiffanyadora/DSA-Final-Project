@@ -36,6 +36,7 @@ class loc{
 class patient{
 	private:
 		string name;
+		string vtype;
 		string dose;
 		string hospital;
 		string location;
@@ -48,8 +49,12 @@ class patient{
 			this->name = name;
 		}
 		
+		void setVtype(string vtype) { this->vtype = vtype; } 
+		string getVtype() { return this->vtype; }
+		
 		void setName(string name) { this->name = name; } 
 		string getName() { return this->name; }
+		
 		void setDose(string dose) { this->dose = dose; } 
 		string getDose() { return this->dose; }
 		void setHospital(string hospital) { this->hospital = hospital; } 
@@ -64,8 +69,7 @@ class registration{
 	public:
 		vector<patient> patients;
 		void regisMenu(string username){
-			string name;
-			name = username;
+			string name = username;
 			
 			int p;
 			bool newr = true;
@@ -94,11 +98,14 @@ class registration{
 				int inc;
 				
 				while(1){
-					cout<<"\n Vaccine Types: 1.Pfizer 2.AntiCorona 3.Sumtingwong ";
+					cout<<"\n Vaccine Types: 1.Pfizer 2.Sinovac 3.Moderna 4.AstraZeneca ";
 					cout<<"\n Select: ";
 					cin >> inc;
 					if(inc < 4 && inc > 0) {
-						newPatient.setDose("Ha");
+						if(inc == 1) newPatient.setVtype("Pfizer");
+						if(inc == 2) newPatient.setVtype("Sinovac");
+						if(inc == 3) newPatient.setVtype("Moderna");
+						if(inc == 4) newPatient.setVtype("AstraZeneca");
 						break;
 					}
 					else cout << "Invalid Input!" << endl;
@@ -114,8 +121,6 @@ class registration{
 						break;
 					} else cout << "Invalid Input!" << endl;
 				}
-				
-				
 				
 				cout<<"\nJakarta Selatan\n";
 				
@@ -176,11 +181,13 @@ class registration{
 			cout<<"\n                Your Vaccination Ticket                  \n";
 			cout<<"\n 1. Name: ";
 			cout<< newPatient.getName();
-			cout<<"\n 2. Dosage: ";
+			cout<<"\n 2. Vaccine Type: ";
+			cout<< newPatient.getVtype();
+			cout<<"\n 3. Dosage: ";
 			cout<< newPatient.getDose();
-			cout<<"\n 3. Hospital: ";
+			cout<<"\n 4. Hospital: ";
 			cout<< newPatient.getHospital();
-			cout<<"\n 4. Address: ";
+			cout<<"\n 5. Address: ";
 			cout<< newPatient.getLocation();
 			
 			cout<<"\n\n Back to Main Menu (press any key)";
