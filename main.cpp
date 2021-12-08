@@ -2,6 +2,7 @@
 #include <string>
 #include <conio.h>
 #include <vector>
+#include "vaccine_inventory_system.cpp"
 using namespace std;
 
 int main()
@@ -19,7 +20,7 @@ int main()
     vector<string> password = {"fatmawati", "kebayoran", "mayapada"};
     vector<string> usertype = {"Hospital", "Hospital", "Hospital"};
 
-    while (repeat_whole != 0)
+    while (repeat_whole != 0) //repeats the program continuously
     {
         cout << "=============================================" << endl;
         cout << "\nWelcome to the Vaccine Management System!\n" << endl;
@@ -68,18 +69,18 @@ int main()
                 ch = getch();
             }
             
-            for(int x = 0; x < username.size(); x++)
+            for(int x = 0; x < username.size(); x++) //check whether the username and password exists
             {
                 if(input_uname == username[x])
                 {
                     if(input_pword == password[x])
                     {
-                        if(usertype[x] == "Hospital")
+                        if(usertype[x] == "Hospital") //hospital accounts have more access
                         {
                             cout << "\n\nAccess granted." << endl;
                             cout << "Welcome, " << input_uname << endl;
                             
-                            while (repeat_hospital != 0)
+                            while (repeat_hospital != 0) 
                             {
                                 cout << "\nWhat would you like to do?" << endl;
                                 cout << "Press V to check vaccine information" << endl;
@@ -88,8 +89,9 @@ int main()
                                 
                                 if (choice2 == 'V' || choice2 == 'v')
                                 {
-                                    //tiffany's function
-                                    repeat_hospital = 0;
+                                    vaccineInventory inventory1; //create a new object inventory1
+                                    inventory1.menu(); //calls the menu function to start the vaccine management
+                                    repeat_hospital = 0; 
                                 }
                                 else if (choice2 == 'P' || choice2 == 'p')
                                 {
@@ -99,14 +101,12 @@ int main()
                                 else
                                 {
                                     cout << "Invalid input. Please try again." << endl;
-                                    repeat_hospital = 1;
+                                    repeat_hospital = 1; //repeats if the input is incorrect
                                 }
                             }
                         }
                         else if(usertype[x] == "User")
                         {
-                            
-                            //interfaceenduser
                             cout << "\n\nAccess granted." << endl;
                             cout << "Welcome, " << input_uname << endl;
                             cout << "\nWhat would you like to do?" << endl;
@@ -116,12 +116,12 @@ int main()
                 }
             }
             cout << "\nUser does not exist. Please try again later.\n" << endl;
-            repeat_whole = 1;
+            repeat_whole = 1; //repeats the entire program due to incorrect input
         }
         else
         {
             cout << "Invalid input. Please try again.\n" << endl;
-            repeat_whole = 1;
+            repeat_whole = 1; //repeats the entire program due to incorrect input
         }
     }
 }
