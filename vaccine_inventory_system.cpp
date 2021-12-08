@@ -1,7 +1,8 @@
 #include<iostream>
 #include<stdlib.h>
-#include <iomanip>
+#include<iomanip>
 #include<conio.h>
+#include <assert.h>
 
 using namespace std;
 
@@ -33,6 +34,11 @@ class vaccineInventory{
         void search_vaccine();
         void update_vaccine();
         void check_vaccine_status();
+
+        // Get the details of vaccine at a specific position
+        int get_vaccine_code(int index);
+        int get_vaccine_quantity(int index);
+        string get_vaccine_name(int index);
 };
 
 /* Function to insert new vaccine to the inventory */
@@ -333,6 +339,51 @@ void vaccineInventory::check_vaccine_status()
     getch();
 }
 
+string vaccineInventory::get_vaccine_name(int index)
+{
+
+    Node* temp = this->front;
+
+    int count = 0;
+    while (temp != NULL) {
+        if (count == index)
+            return (temp->name);
+        count++;
+        temp = temp->next;
+    }
+    assert(0);
+}
+
+int vaccineInventory::get_vaccine_code(int index)
+{
+
+    Node* temp = this->front;
+
+    int count = 0;
+    while (temp != NULL) {
+        if (count == index)
+            return (temp->code);
+        count++;
+        temp = temp->next;
+    }
+    assert(0);
+}
+
+int vaccineInventory::get_vaccine_quantity(int index)
+{
+
+    Node* temp = this->front;
+
+    int count = 0;
+    while (temp != NULL) {
+        if (count == index)
+            return (temp->code);
+        count++;
+        temp = temp->next;
+    }
+    assert(0);
+}
+
 /* Program menu */
 void vaccineInventory::inventoryMenu(){
     int option,vacID,vacCount;
@@ -382,8 +433,7 @@ void vaccineInventory::inventoryMenu(){
 			    break;
 			case 7:
 			    return;
-                break;
-
+          break;
             // If input out of bound, prompt user to enter again.
 			default:
 			    cout<<"Invalid input, please try again. (press any key)";
