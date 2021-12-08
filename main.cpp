@@ -3,6 +3,7 @@
 #include <conio.h>
 #include <vector>
 #include "vaccine_inventory_system.cpp"
+#include "VacRegis.cpp"
 using namespace std;
 
 int main()
@@ -19,6 +20,8 @@ int main()
     vector<string> username = {"rsupfatmawati", "rsudkebayoranbaru", "mayapadahospital"}; //the hospitals accounts are reserved
     vector<string> password = {"fatmawati", "kebayoran", "mayapada"};
     vector<string> usertype = {"Hospital", "Hospital", "Hospital"};
+    vaccineInventory inventory1; //create a new object inventory1
+    registration registration1; //create a new object registration1
 
     while (repeat_whole != 0) //repeats the program continuously
     {
@@ -52,7 +55,7 @@ int main()
             cout << "Welcome, " << uname << endl;
             cout << "\nWhat would you like to do?" << endl;
 
-            //bintang's function
+            registration1.regisMenu(uname);
         }
             
         else if (choice1 == 'L' || choice1 == 'l')
@@ -84,19 +87,12 @@ int main()
                             {
                                 cout << "\nWhat would you like to do?" << endl;
                                 cout << "Press V to check vaccine information" << endl;
-                                cout << "Press P to check patient information" << endl;
                                 cin >> choice2;
                                 
                                 if (choice2 == 'V' || choice2 == 'v')
                                 {
-                                    vaccineInventory inventory1; //create a new object inventory1
-                                    inventory1.menu(); //calls the menu function to start the vaccine management
+                                    inventory1.inventoryMenu(); //calls the menu function to start the vaccine management
                                     repeat_hospital = 0; 
-                                }
-                                else if (choice2 == 'P' || choice2 == 'p')
-                                {
-                                    //bintang's function
-                                    repeat_hospital = 0;
                                 }
                                 else
                                 {
@@ -110,12 +106,12 @@ int main()
                             cout << "\n\nAccess granted." << endl;
                             cout << "Welcome, " << input_uname << endl;
                             cout << "\nWhat would you like to do?" << endl;
-                            //bintang's function
+                            
+                            registration1.regisMenu(input_uname);
                         }
                     }
                 }
             }
-            cout << "\nUser does not exist. Please try again later.\n" << endl;
             repeat_whole = 1; //repeats the entire program due to incorrect input
         }
         else
