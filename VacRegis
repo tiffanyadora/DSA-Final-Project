@@ -61,9 +61,9 @@ class patient{
 class registration{
 	public:
 		vector<patient> patients;
-		void regisMenu(){
-			string name = "Bintang Anandhiya";
-			cin >> name;
+		void regisMenu(string username){
+			string name;
+			cin >> username;
 			
 			int p;
 			bool newr = true;
@@ -188,4 +188,3 @@ class registration{
 		}
 		
 };
-
