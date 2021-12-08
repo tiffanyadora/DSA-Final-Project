@@ -26,7 +26,7 @@ class vaccineInventory{
         Node *front = NULL,*rear,*temp;
 
         // All features of Vaccine Inventory Program
-        void menu();
+        void inventoryMenu();
         void add_new_vaccine();
         void delete_vaccine();
         void display_vaccine();
@@ -334,7 +334,7 @@ void vaccineInventory::check_vaccine_status()
 }
 
 /* Program menu */
-void vaccineInventory::menu(){
+void vaccineInventory::inventoryMenu(){
     int option,vacID,vacCount;
 
     // Menu interface
@@ -381,7 +381,7 @@ void vaccineInventory::menu(){
 			    delete_vaccine();
 			    break;
 			case 7:
-			    exit(0);
+			    return;
                 break;
 
             // If input out of bound, prompt user to enter again.
