@@ -189,8 +189,3 @@ class registration{
 		
 };
 
-int main(){
-	registration regs1;
-	regs1.regisMenu();
-}
-
