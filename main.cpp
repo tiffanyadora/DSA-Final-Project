@@ -39,6 +39,8 @@ int main()
             cout << "Username: ";
             cin >> uname;
             cout << "Password (do not use backspace): ";
+            
+            pword = "";
             c = getch();
             
             while(c != 13) //to know when to stop the asterisks from hiding the password because the 13th character is enter
@@ -63,8 +65,9 @@ int main()
             cout << "\nUsername: ";
             cin >> input_uname;
             cout << "Password (do not use backspace): ";
-            ch = getch();
             
+            input_pword = "";
+			ch = getch();
             while(ch != 13) //to know when to stop the asterisks from hiding the password because the 13th character is enter
             {
                 input_pword.push_back(ch); 
@@ -78,6 +81,7 @@ int main()
                 {
                     if(input_pword == password[x])
                     {
+                    	
                         if(usertype[x] == "Hospital") //hospital accounts have more access
                         {
                             cout << "\n\nAccess granted." << endl;
@@ -85,6 +89,7 @@ int main()
                             
                             while (repeat_hospital != 0) 
                             {
+                                cout << "\nWhat would you like to do?" << endl;
                                 cout << "Press V to check vaccine information" << endl;
                                 cin >> choice2;
                                 
@@ -104,10 +109,14 @@ int main()
                         {
                             cout << "\n\nAccess granted." << endl;
                             cout << "Welcome, " << input_uname << endl;
+                            cout << "\nWhat would you like to do?" << endl;
+                            
                             registration1.regisMenu(input_uname);
                         }
                     }
-                }
+                }else{
+                	
+				}
             }
             repeat_whole = 1; //repeats the entire program due to incorrect input
         }
