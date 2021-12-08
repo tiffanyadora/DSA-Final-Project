@@ -27,7 +27,7 @@ class vaccineInventory{
         Node *front = NULL,*rear,*temp;
 
         // All features of Vaccine Inventory Program
-        void menu();
+        void inventoryMenu();
         void add_new_vaccine();
         void delete_vaccine();
         void display_vaccine();
@@ -385,7 +385,7 @@ int vaccineInventory::get_vaccine_quantity(int index)
 }
 
 /* Program menu */
-void vaccineInventory::menu(){
+void vaccineInventory::inventoryMenu(){
     int option,vacID,vacCount;
 
     // Menu interface
@@ -432,24 +432,12 @@ void vaccineInventory::menu(){
 			    delete_vaccine();
 			    break;
 			case 7:
-			    cout<<get_vaccine_name(0);
-			    getch();
-                break;
-
+			    return;
+          break;
             // If input out of bound, prompt user to enter again.
 			default:
 			    cout<<"Invalid input, please try again. (press any key)";
 			    getch();
 		}
 	}
-}
-
-/* Main function */
-int main()
-{
-    // Create a new object inventory1
-    vaccineInventory inventory1;
-
-    // Start the program
-    inventory1.menu();
 }
