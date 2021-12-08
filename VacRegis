@@ -31,8 +31,31 @@ class loc{
 		vector<loc> * getChildren() { return &this->children; }
 };
 
-class registration{
+class patient{
+	private:
+		string name;
+		string dose;
+		string hospital;
+		string location;
+		string ticketId;
+
+	public:
+		patient(){
+		}
+		patient(string name){
+			this->name = name;
+		}
 		
+		void setName(string name) { this->name = name; } 
+		string getName() { return this->name; }
+		void setDose(string dose) { this->dose = dose; } 
+		string getDose() { return this->dose; }
+		void setHospital(string hospital) { this->hospital = hospital; } 
+		string getHospital() { return this->hospital; }
+		void setLocation(string location) { this->location = location; } 
+		string getLocation() { return this->location; }
+		void setTicketId(string ticketId) { this->ticketId = ticketId; } 
+		string getTicketId() { return this->ticketId; }
 };
 
 int main(){
